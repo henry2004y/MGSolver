@@ -6,10 +6,10 @@ This code also serves as an example of how one can simply/generalize an existing
 ## Getting Started
 
 This code is completely in OOP. For the 1D case, start from:
-'''
+```
 TestCycle.run; % execute
 TestCycle.plot(ans) % visualize
-'''
+```
 
 ### Prerequisites
 
