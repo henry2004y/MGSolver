@@ -41,6 +41,9 @@ classdef (Sealed) Options < handle
       numPostSweeps = 1 % # post-CGC relaxation sweeps
       % Multi-grid run
       numCycles = 1 % #cycles to run
+      
+      % Plotting
+      DoPlot = true
    end
    
    properties

@@ -34,15 +34,13 @@ classdef TestCycle
             fprintf('CYCLE %#1d CONVERGENCE FACTOR = %.3f\n', ...
                numCycle, eNew/eOld);
          end
-      end
-      
-      function plot(u)
-         % Visualize the final output and compare with analytical solution.
-         figure
-         options = Options;
-         fplot(options.u,[0 options.domainSize])
-         hold on
-         plot(linspace(0,1.5,numel(u)),u,'--+')
+         
+         % Visualization
+         if options.DoPlot
+            finestLevel.plot(u);
+            hold on
+            fplot(options.u,[0 options.domainSize]) % analytic sol.
+         end
       end
    end
    
