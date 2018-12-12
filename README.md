@@ -7,9 +7,10 @@ This code also serves as an example of how one can simply/generalize an existing
 
 This code is completely in OOP. For the 1D case, start from:
 ```
-TestCycle.run; % execute
-TestCycle.plot(ans) % visualize
+TestCycle.run;
 ```
+
+All the parameters are set in 'Options.m'.
 
 ### Prerequisites
 
