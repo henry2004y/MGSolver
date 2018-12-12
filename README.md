@@ -5,12 +5,12 @@ This code also serves as an example of how one can simply/generalize an existing
 
 ## Getting Started
 
-This code is completely in OOP. For the 1D case, start from:
+This code is completely in OOP. Choose the dimension you are aimed for, and start from:
 ```
 TestCycle.run;
 ```
 
-All the parameters are set in 'Options.m'.
+All the parameters are set in 'Options.m'. Currently weight Jacobi and two types of Gauss-Seidal smoother are implemented.
 
 ### Prerequisites
 
