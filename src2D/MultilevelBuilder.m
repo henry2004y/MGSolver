@@ -35,14 +35,14 @@ classdef (Sealed) MultilevelBuilder < handle
    end
    %======================== PRIVATE METHODS =========================
    methods (Static, Access = private)
-      function setRhsValues(lev, i1, i2, f)
-         % Set the values of indices (i1,i2) of a level's RHS vector to
+      function setRhsValues(lev, i, j, f)
+         % Set the values of indices (i,j) of a level's RHS vector to
          % the function f, evaluated at the corresponding gridpoint
          % locations.
-         [xInterior,yInterior] = lev.location(i1,i2);
+         [xInterior,yInterior] = lev.location(i,j);
          % Convert singleton x,y vectors to 2-D matrices
          [X,Y] = ndgrid(xInterior, yInterior);
-         lev.f(i1,i2) = f(X,Y);
+         lev.f(i,j) = f(X,Y);
       end
    end
 
