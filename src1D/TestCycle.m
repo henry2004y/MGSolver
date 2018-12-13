@@ -8,6 +8,7 @@ classdef TestCycle
    %======================== METHODS =================================
    methods(Static)
       function [u, finestLevel] = run
+         addpath(genpath('../util/'));
          % Initialize objects
          flops(0); % Reset flop count
          options = Options;

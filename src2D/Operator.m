@@ -23,16 +23,16 @@ classdef (Sealed) Operator < handle
          % Allocate output array
          result = zeros(obj.level.n);
          % Set Dirichlet boundary conditions
-         i1 = [1 obj.level.n(1)]; result(i1,:) = u(i1,:);
-         i2 = [1 obj.level.n(2)]; result(:,i2) = u(:,i2);
+         i = [1 obj.level.n(1)]; result(i,:) = u(i,:);
+         j = [1 obj.level.n(2)]; result(:,j) = u(:,j);
          % 5-point discrete Laplacian in the interior domain
          rh2 = 1/obj.level.h^2;
-         for i1 = 2:obj.level.n(1)-1
-            for i2 = 2:obj.level.n(2)-1
-               result(i1,i2) = rh2*(...
-                  4*u(i1,i2) ...
-                  -u(i1 ,i2-1) - u(i1 ,i2+1) ...
-                  -u(i1-1,i2 ) - u(i1+1,i2 ) );
+         for i = 2:obj.level.n(1)-1
+            for j = 2:obj.level.n(2)-1
+               result(i,j) = rh2*(...
+                  4*u(i,j) ...
+                  -u(i ,j-1) - u(i ,j+1) ...
+                  -u(i-1,j ) - u(i+1,j ) );
             end
          end
       end

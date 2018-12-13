@@ -1,6 +1,6 @@
 function f = flops(fl)
 %FLOPS Get or set the global flopcount variable.
-% FLOPS returns the current flopcount. FLOPS(F) sets flopcount to F.
+%   Returns the current flopcount. FLOPS(F) sets flopcount to F.
 global flopcount
 
 if nargin == 0
