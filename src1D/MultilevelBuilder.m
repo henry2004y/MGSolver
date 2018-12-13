@@ -31,15 +31,15 @@ classdef (Sealed) MultilevelBuilder < handle
    end
    %======================== PRIVATE METHODS =========================
    methods (Static, Access = private)
-      function setRhsValues(lev, i1, f)
-         % Set the values of indices (i1) of a level's RHS vector to
+      function setRhsValues(lev, i, f)
+         % Set the values of indices (i) of a level's RHS vector to
          % the function f, evaluated at the corresponding gridpoint
          % locations.
          
          %hyzhou note: it seems like it is copied by reference?
          % Because Level is a handle class!
          
-         XInterior = lev.location(i1);
+         XInterior = lev.location(i);
          
          lev.f(i1) = f(XInterior);
       end
