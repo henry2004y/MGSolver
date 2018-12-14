@@ -34,8 +34,10 @@ classdef (Sealed) Options < handle
       % Weighted Jacobi relaxation
       %smoother = JacobiSmoother(6/7)
       % Inter-grid transfers
-      interpolator = BilinearInterpolator % Interpolation of corrections
-      restrictor = FwLinearRestrictor % Residual transfer
+      % Interpolation of corrections, 1 for line, 2 for 3D matrix
+      interpolator = BilinearInterpolator(1)
+      % Residual transfer, 1 for line, 2 for 3D matrix
+      restrictor = FwLinearRestrictor(1)
       % Cycle parameters
       maxCycleLevels = 100 % # levels to employ in the cycle
       cycleIndex = 1 % V-cycle/W-cycle/etc.
