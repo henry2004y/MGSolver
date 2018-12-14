@@ -5,7 +5,7 @@ classdef (Sealed) JacobiSmoother < Smoother
    
    %======================== MEMBERS =================================
    properties (GetAccess = private, SetAccess = private)
-      w    {double} % weight
+      w  {double} % weight
    end
    %======================== CONSTRUCTORS ============================
    methods
@@ -45,10 +45,10 @@ classdef (Sealed) JacobiSmoother < Smoother
                      + (1 - obj.w)*u(i,j,k);
                end
             end
-            % A relaxation sweep is counted as one flop per internal
-            % gridpoint
-            addflops(prod(level.n-1));
          end
+         % A relaxation sweep is counted as one flop per internal
+         % gridpoint
+         addflops(prod(level.n-1));
       end
       
       function u = relax_conv(obj, level, u)
@@ -56,7 +56,7 @@ classdef (Sealed) JacobiSmoother < Smoother
          % This is faster than the explicit index-based method on a large
          % grid, but slower on a small grid. An optimal choice may be a
          % combination of these two. My current test shows that for cell
-         % numbers less than 64, I should use the brute-force method. 
+         % numbers less than 64, I should use the brute-force method.
          
          % Stencil
          L = zeros(3,3,3);
@@ -72,7 +72,7 @@ classdef (Sealed) JacobiSmoother < Smoother
          L_sm = L;
          L_sm(2,2,2) = 0;
          u = obj.w/L(2,2,2)*(h2*f - convn(u,L_sm,'same')) + (1 - obj.w)*u;
-
+         
          % Impose B.C.
          i = [1 level.n(1)]; u(i,:,:) = f(i,:,:);
          j = [1 level.n(2)]; u(:,j,:) = f(:,j,:);

@@ -13,12 +13,12 @@ classdef (Sealed) GaussSeidelSmoother < Smoother
          obj@Smoother('GS');
          obj.numColors = numColors;
       end
-   end  
+   end
    %======================== METHODS =================================
    methods
       function u = relax(obj, level, u)
          % Gauss-Seidel successive displacement in lexicographic ordering.
-         % Because MATLAB passes array parameters by value, this does not 
+         % Because MATLAB passes array parameters by value, this does not
          % override the original U array.
          
          % Useful aliases
@@ -46,11 +46,11 @@ classdef (Sealed) GaussSeidelSmoother < Smoother
                            + u(i-1,j,k+1)/6 + u(i+1,j,k+1)/6 );
                      end
                   end
-                  % A relaxation sweep is counted as one flop per internal
-                  % gridpoint
-                  addflops(prod(level.n-1));
                end
             end
+            % A relaxation sweep is counted as one flop per internal
+            % gridpoint
+            addflops(prod(level.n-1));
          end
       end
    end
