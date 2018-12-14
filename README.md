@@ -17,7 +17,7 @@ All the parameters are set in 'Options.m'. Currently weight Jacobi and two types
 MATLAB
 
 ## Notes
-There are rooms for improvements. I found a master thesis on this topic which is very useful.
+There are rooms for improvements. I found a master thesis on this topic which is very useful. One key idea from that thesis is to use convolution instead of explicit loops over indexes to do relaxation. Based on my tests, this gives faster speed for a grid size larger than 64, but it is not worth it for any smaller grid. The current 3D implementation of GS method is a combination of the brute-force method and convolution method.
 
 ## Authors
 
