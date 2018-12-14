@@ -18,7 +18,7 @@ classdef (Sealed) Operator < handle
    methods
       function result = L(obj, u)
          % Apply the discrete operator L to a function U. This is the
-         % 5-point Laplacian with Dirichlet boundary conditions.
+         % 7-point Laplacian with Dirichlet boundary conditions.
          
          % Allocate output array
          result = zeros(obj.level.n);

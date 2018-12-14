@@ -74,7 +74,11 @@ classdef (Sealed) Level < handle
       function v = relax(obj, u)
          % Perform a relaxation sweep. Delegates to the smoother with a
          % call-back to this level.
-         v = obj.smoother.relax(obj, u);
+         if strcmp(obj.smoother.name,'Jacobi') && prod(obj.n-1) > 64
+            v = obj.smoother.relax_conv(obj, u);
+         else
+            v = obj.smoother.relax(obj, u);
+         end
       end
       function u = interpolate(obj, uc)
          % Interpolate the correction uc from the next-coarser level.

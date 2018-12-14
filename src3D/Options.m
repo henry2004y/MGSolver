@@ -43,7 +43,7 @@ classdef (Sealed) Options < handle
       numPreSweeps = 2 % # pre-CGC relaxation sweeps
       numPostSweeps = 1 % # post-CGC relaxation sweeps
       % Multi-grid run
-      numCycles = 4 % #cycles to run
+      numCycles = 6 % #cycles to run
       
       % Plotting
       DoPlot = true

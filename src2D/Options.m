@@ -24,9 +24,9 @@ classdef (Sealed) Options < handle
       
       % Relaxation parameters
       % Gauss-Seidel relaxation (1=LEX, 2=RB)
-      %smoother = GaussSeidelSmoother(1) 
+      smoother = GaussSeidelSmoother(1) 
       % Weighted Jacobi relaxation
-      smoother = JacobiSmoother(2/3)
+      %smoother = JacobiSmoother(2/3)
       % Inter-grid transfers
       interpolator = BilinearInterpolator % Interpolation of corrections
       restrictor = FwLinearRestrictor % Residual transfer

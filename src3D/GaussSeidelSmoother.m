@@ -10,6 +10,7 @@ classdef (Sealed) GaussSeidelSmoother < Smoother
    %======================== CONSTRUCTORS ============================
    methods
       function obj = GaussSeidelSmoother(numColors)
+         obj@Smoother('GS');
          obj.numColors = numColors;
       end
    end  

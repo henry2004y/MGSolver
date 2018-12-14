@@ -33,10 +33,10 @@ classdef (Sealed) JacobiSmoother < Smoother
                   + u(i  ,j-1) + u(i  ,j+1) ...
                   + u(i-1,j )  + u(i+1,j  ) ) + (1 - obj.w)*u(i,j);
             end
-            % A relaxation sweep is counted as one flop per internal
-            % gridpoint
-            addflops(prod(level.n-1));
          end
+         % A relaxation sweep is counted as one flop per internal
+         % gridpoint
+         addflops(prod(level.n-1));
       end
    end
    

@@ -16,6 +16,9 @@ All the parameters are set in 'Options.m'. Currently weight Jacobi and two types
 
 MATLAB
 
+## Notes
+There are rooms for improvements. I found a master thesis on this topic which is very useful.
+
 ## Authors
 
 * **Hongyang Zhou** - [henry2004y](https://github.com/henry2004y)
