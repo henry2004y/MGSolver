@@ -19,6 +19,10 @@ MATLAB
 ## Notes
 There are rooms for improvements. I found a master thesis on this topic which is very useful. One key idea from that thesis is to use convolution instead of explicit loops over indexes to do relaxation. Based on my tests, this gives faster speed for a grid size larger than 64, but it is not worth it for any smaller grid. The current 3D implementation of GS method is a combination of the brute-force method and convolution method.
 
+Line restrictor and interpolator are implemented. This works especially well if there is a strong decoupling between different directions. For 3D, it is also possible to use plane smoother.
+
+Alternatively, other 3D matrix stencil restrictor and interpolator are implemented and tested. I have no idea which is the best --- the usual answer to these kind of questions is: it depends.
+
 ## Authors
 
 * **Hongyang Zhou** - [henry2004y](https://github.com/henry2004y)
