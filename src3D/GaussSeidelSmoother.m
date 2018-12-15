@@ -5,7 +5,7 @@ classdef (Sealed) GaussSeidelSmoother < Smoother
    
    %======================== MEMBERS =================================
    properties (GetAccess = private, SetAccess = private)
-      numColors % Number of colors (1=LEX, 2=RB)
+      numColors  double {mustBeInteger} % Number of colors (1=LEX, 2=RB)
    end
    %======================== CONSTRUCTORS ============================
    methods
