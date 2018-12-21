@@ -45,9 +45,8 @@ classdef BilinearInterpolator
          % Inject coarse points into the respective fine points
          u(1:2:nf(1),:,:) = uc;
          % Linearly interpolate into in-between fine-level points
-         for i=1:nc(1)-1
-            u(2*i,:,:) = 0.5*(uc(i,:,:) + uc(i+1,:,:));
-         end
+         i_ = 1:nc(1)-1;
+         u(2*i_,:,:) = 0.5*(uc(i_,:,:) + uc(i_+1,:,:));
       end
       
       function u = interpInY(obj, coarseLevel, fineLevel, uc)
@@ -59,9 +58,8 @@ classdef BilinearInterpolator
          % Inject coarse points into the respective fine points
          u(:,1:2:nf(2),:) = uc;
          % Linearly interpolate into in-between fine-level points
-         for j=1:nc(2)-1
-            u(:,2*j,:) = 0.5*(uc(:,j,:) + uc(:,j+1,:));
-         end
+         j_ = 2:nc(2)-1;
+         u(:,2*j_,:) = 0.5*(uc(:,j_,:) + uc(:,j_+1,:));
       end
       
       function u = interpInZ(obj, coarseLevel, fineLevel, uc)
@@ -73,9 +71,8 @@ classdef BilinearInterpolator
          % Inject coarse points into the respective fine points
          u(:,:,1:2:nf(3)) = uc;
          % Linearly interpolate into in-between fine-level points
-         for k=1:nc(3)-1
-            u(:,:,2*k) = 0.5*(uc(:,:,k) + uc(:,:,k+1));
-         end
+         k_ = 1:nc(3)-1;
+         u(:,:,2*k_) = 0.5*(uc(:,:,k_) + uc(:,:,k_+1));
       end
       
       function u = interp3D(obj, coarseLevel, fineLevel, uc)
