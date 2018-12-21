@@ -5,7 +5,7 @@ This code also serves as an example of how one can simply/generalize an existing
 
 ## Getting Started
 
-This code is completely in OOP. Choose the dimension you are aimed for, and start from:
+This code is completely in OOP. Choose the dimension you are aiming for, and start from:
 ```
 TestCycle.run;
 ```
