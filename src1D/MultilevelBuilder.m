@@ -36,12 +36,10 @@ classdef (Sealed) MultilevelBuilder < handle
          % the function f, evaluated at the corresponding gridpoint
          % locations.
          
-         %hyzhou note: it seems like it is copied by reference?
-         % Because Level is a handle class!
-         
+         % It is copied by reference because Level is a handle class!       
          XInterior = lev.location(i);
          
-         lev.f(i1) = f(XInterior);
+         lev.f(i) = f(XInterior);
       end
    end
    

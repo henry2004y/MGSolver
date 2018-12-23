@@ -60,9 +60,6 @@ classdef (Sealed) Cycle < handle
             obj.printErrorNorm(l, 'Coarse-grid correction', u);
             %--- Post-relaxation ---
             u = obj.relax(l, obj.options.numPostSweeps, u, true);
-%             %hyzhou debug
-%             figure
-%             obj.levels{l}.plot(u)
          end
       end
       
