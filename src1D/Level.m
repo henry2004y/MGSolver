@@ -84,9 +84,9 @@ classdef (Sealed) Level < handle
          % Restrict the residual FC to the next-coarser level.
          fc = obj.restrictor.restrict(obj.coarseLevel, obj, f);
       end
-      function x = location(obj, i1)
-         % Return gridpoint locations at indices (I1).
-         x = obj.h*(i1-1);
+      function x = location(obj, i)
+         % Return gridpoint locations at indices (I).
+         x = obj.h*(i-1);
       end
       function result = L(obj, u)
          % Apply the discrete operator L to a function U.
