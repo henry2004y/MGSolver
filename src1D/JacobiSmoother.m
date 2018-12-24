@@ -27,17 +27,17 @@ classdef (Sealed) JacobiSmoother < Smoother
          % Useful aliases
          h2 = level.h^2;
          f = level.f;
-
+         
          % Impose B.C.
          i = [1 level.n]; uNew(i) = f(i);
          % Relax in the internal domain
          for i=2:level.n-1
             uNew(i) = obj.w*0.5*(h2*f(i) + u(i-1) + u(i+1)) + ...
                (1-obj.w)*u(i);
-            % A relaxation sweep is counted as one flop per internal
-            % gridpoint
-            addflops(prod(level.n-1));
          end
+         % A relaxation sweep is counted as one flop per internal
+         % gridpoint
+         addflops(prod(level.n-1));
       end
    end
    

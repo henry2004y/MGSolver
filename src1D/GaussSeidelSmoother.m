@@ -28,10 +28,10 @@ classdef (Sealed) GaussSeidelSmoother < Smoother
          % Relax in the internal domain
          for i=2:level.n(1)-1
             u(i) = 0.5*(h2*f(i) + u(i-1) + u(i+1));
-            % A relaxation sweep is counted as one flop per internal
-            % gridpoint
-            addflops(prod(level.n-1));
          end
+         % A relaxation sweep is counted as one flop per internal
+         % gridpoint
+         addflops(prod(level.n-1));
       end
       
    end
