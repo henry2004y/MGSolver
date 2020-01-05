@@ -10,7 +10,7 @@ This code is completely in OOP. Choose the dimension you are aiming for, and sta
 TestCycle.run;
 ```
 
-All the parameters are set in 'Options.m'. Currently weight Jacobi and two types of Gauss-Seidal smoother are implemented.
+All the parameters are set in 'Options.m'. Currently weighted Jacobi and two types of Gauss-Seidal smoother are implemented.
 
 ### Prerequisites
 
