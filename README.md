@@ -1,7 +1,7 @@
 # Multigrid OOP Solver
 1D/2D/3D finite difference multigrid solver on regular grid. The skeleton of the code is the same as the perfect 2D multigrid solver provided by Achi Brandt. Everyone who is new to this should learn how masters do their work. I personally definitely want to meet the author and learn from him.
 
-This code also serves as an example of how one can simply/generalize an existing code. Original documents can be downloaded [here](http://www.wisdom.weizmann.ac.il/~achi/classics.pdf). Useful references are: [Matlab code tutorial](https://github.com/dappelha/MultiGridMatlab)
+This code also serves as an example of how one can simplify/generalize an existing code. Original documents can be downloaded [here](http://www.wisdom.weizmann.ac.il/~achi/classics.pdf). Useful references are: [Matlab code tutorial](https://github.com/dappelha/MultiGridMatlab)
 
 ## Getting Started
 
